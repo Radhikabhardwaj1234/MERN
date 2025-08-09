@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> my h1 pyara pyara </h1>
+    <h1 id="head">Heading </h1>
+    <h1 id="head">Heading </h1>
+    <p class="para" name = "para-with-name"></p>
+    <h1 class="para"></h1>
+    <h1 class="para" name = "para-with-name"></h1>
+    <h1 class="para"></h1>
+    <h1 class="para"></h1>
+
+    <script>
+
+        //BY ID ****
+        let ele = document.getElementById("head");         //can access only one id at a time 
+        console.log(ele);
+
+        //BY CLASS ****   Always returns an object(array like HTMLCollection) of all elements having same class .
+
+        let ele1 = document.getElementsByClassName("para");    //can access all elements of  class with same name at once
+        console.log(ele1);               
+        for(item of ele1){
+            item.innerHTML = "helllllllllllll";
+            item.color = "red"
+        }
+        ele1[0].innerHTML = "<h1> <mark> para </mark> </h1>";   
+        // Array.from(obj)  -  convert any  iterable object in to an array   
+        let arr = Array.from(ele1);
+        console.log(arr)
+        arr.map(item => {
+            item.innerText = "map";
+        })
+
+
+        //BY TAG NAME ****   same as className
+        let ele2 = document.getElementsByTagName("h1");   
+        [...ele2].map(item => item.style.color = "green");
+
+        //BY NAME ****  Always returns an object (NOdeList : collection of nodes ) of all elements having same class .
+        let ele3 = document.getElementsByName("para-with-name");
+        ele3.forEach(item => item.style.color = "purple");
+        console.log(ele3);
+
+
+        // ******** INTERVIEW *********
+        // DIffernece btw HTMLCOllection and NodeList:
+        // HTMLCollection is a collection of HTML entities only but NodeList can contain other things as well like text nodes, comment nodes etc
+        // there is other diff more
+
+
+        </script>
+</body>
+</html>

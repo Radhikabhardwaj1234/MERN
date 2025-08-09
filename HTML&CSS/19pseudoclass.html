@@ -1,0 +1,84 @@
+<!-- pseudo class is a special selector which selects the element in a specific state, that state is called pseudo class. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1:hover{
+            background-color: aqua;
+        }
+        a:link{
+            color: black; /* before visit */
+            text-decoration: dashed 5px underline ;
+            text-decoration: wavy 5px overline underline;
+        }
+        a:visited{
+            color:brown;  /*after visit*/
+        }
+        a:hover{
+            font-size:xx-large;
+        }
+        a:active{
+           color:aqua;  /*after click during loading*/
+        }
+        input:focus{
+            background-color: pink;
+        }
+        /* p:first-child{
+            background-color: pink;
+        }
+        p:last-child{       /* will not work for body's last child
+            background-color: rgb(226, 29, 62);
+        }
+        p:first-of-type{
+            background-color: rgb(23, 237, 73);
+        }
+        p:last-of-type{
+            background-color: rgb(242, 30, 189);
+        } 
+
+        div >p:first-child{
+            background-color: brown;
+        }
+        input{
+            background-color: aliceblue;
+        } 
+        p:nth-child(2){
+            background-color: aqua;
+        }
+        p:nth-child(odd){
+            background-color: rgb(213, 210, 27);
+        }
+        p:nth-child(even){
+            background-color: rgb(245, 21, 174);
+        }*/
+        p:nth-child(2n+0){
+            background-color: rgb(19, 182, 223);
+        }
+    </style>
+</head>
+<body>
+    <p>para1</p>
+    <input type="text"/>
+    <pre>
+        hu   hymsakoj
+    </pre>
+    <h1>Hello me</h1>
+    <a href="https://www.flipkart.com">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspflipkart</a>   <!--nbsp non breaking space-->
+    <div>
+        <p>para1</p>
+        <p>para2</p>
+        <p>para3</p>
+        <section>
+            <p>para1</p>
+            <p>para2</p>
+            <p>para3</p>
+        </section>
+    </div>
+    <p>para3</p>
+
+</body>
+</html>

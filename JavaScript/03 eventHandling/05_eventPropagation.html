@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #gparent{
+            height : 400px;
+            width : 400px;
+            background-color: rebeccapurple;
+        }
+        #parent{
+            height : 300px;
+            width : 300px;
+            background-color: pink;
+        }
+        #child{
+             height : 200px;
+            width : 200px;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div id="gparent">
+        <div id="parent">
+            <div id="child">
+                
+            </div>
+        </div>
+    </div>
+   <script>
+    var gparent = document.getElementById("gparent");
+    var parent = document.getElementById("parent");
+    var child = document.getElementById("child");
+    gparent.addEventListener("click" , ()=>{
+        console.log("gparent");
+    })
+    parent.addEventListener("click" , ()=>{
+        console.log("parent");
+    })
+    child.addEventListener("click" , ()=>{
+        console.log("child");
+    })
+
+    // Event Bubbling : When event propagation happens from child to root
+    // Event Capturing : When event propagation happens from root to child
+    // the third parameter in addEventListener is bubbling/capturing phase, it is false/true respectively, by default it is false means bubbling
+    
+    /*
+    // Now the event will be captured till gparent and then it will be bubbled from child to parent
+    gparent.addEventListener("click" , ()=>{
+        console.log("gparent");
+    }, true)
+    parent.addEventListener("click" , ()=>{
+        console.log("parent");
+    })
+    child.addEventListener("click" , ()=>{
+        console.log("child");
+    })
+
+
+    // Now the event will be captured till parent and then it will be bubbled from child to child
+    gparent.addEventListener("click" , ()=>{
+        console.log("gparent");
+    }, true)
+    parent.addEventListener("click" , ()=>{
+        console.log("parent");
+    }, true)
+    child.addEventListener("click" , ()=>{
+        console.log("child");
+    })
+
+
+    // Now the event will be captured till child
+    gparent.addEventListener("click" , ()=>{
+        console.log("gparent");
+    }, true)
+    parent.addEventListener("click" , ()=>{
+        console.log("parent");
+    },true)
+    child.addEventListener("click" , ()=>{
+        console.log("child");
+    },true)
+    */
+
+
+    // Stop Propagation:
+    /*
+    // Now the event propagation will stop on child means only child listener will be called
+    gparent.addEventListener("click" , ()=>{
+        console.log("gparent");
+    })
+    parent.addEventListener("click" , ()=>{
+        console.log("parent");
+    })
+    child.addEventListener("click" , ()=>{
+        console.log("child");
+        event.stopPropagation();
+    })
+
+    // Now the event propagation will stop on parent means only child, parent listener will be called
+    gparent.addEventListener("click" , ()=>{
+        console.log("gparent");
+    })
+    parent.addEventListener("click" , ()=>{
+        console.log("parent");
+        event.stopPropagation();
+    })
+    child.addEventListener("click" , ()=>{
+        console.log("child");
+    })
+
+    // Now the event propagation will stop on gparent because it is captured so it will be called first and then there is stop propagation
+    gparent.addEventListener("click" , ()=>{
+        console.log("gparent");
+        event.stopPropagation();
+    },true)
+    parent.addEventListener("click" , ()=>{
+        console.log("parent");
+    })
+    child.addEventListener("click" , ()=>{
+        console.log("child");
+    })
+
+    // Now the event propagation will stop on parent because it is captured so gparent will be called first and then parent then there is stop propagation
+    gparent.addEventListener("click" , ()=>{
+        console.log("gparent");
+    },true)
+    parent.addEventListener("click" , ()=>{
+        console.log("parent");
+        event.stopPropagation();
+    },true)
+    child.addEventListener("click" , ()=>{
+        console.log("child");
+    })
+    */
+   </script>
+</body>
+</html>

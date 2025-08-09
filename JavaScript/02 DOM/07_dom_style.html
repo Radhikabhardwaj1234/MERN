@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            width: 300px;
+            height: 300px;
+            background-color: blue;
+        }
+        .red{
+            background-color: red;
+        }
+        .green{
+            background-color: green;
+        }
+        .teal{
+            background-color: teal;
+        }
+        .dark{
+            background-color: black;
+            color : white;
+        }
+    </style>
+    <script>
+        let ele1 = document.getElementById("div");
+        console.log(ele1)                              // will give null bcz script is in head tag it doesnt know that there is something in body
+    </script>
+</head>
+<body id="body">
+    <button onclick="toggle()">Dark Mode</button>
+    <div id="div" class="main" >
+
+        <button onclick="func()">Red</button>
+        <button onclick="funcGreen()">Green</button>
+        <button onclick="funcTeal()">teal</button>
+        
+    </div>
+    <script>
+        let ele = document.getElementById("div");
+        let cl = ele.classList;                  // returns a DOMTokenList which is a list of all the classes that are part of the div and the last element is a key value pair where keyName is value : 'class1 class2 class3 ....'
+        console.log(cl)
+        
+        function func(){
+            ele.classList.remove("green")  //remove from classList if class not exist then function does nothing (BUT ALWAYS RETURNS UNDEFINED)
+            ele.classList.add("red");  //used to add  class in classlist of element
+            console.log(ele.classList);
+        }
+        function funcGreen(){
+            ele.classList.remove("red")
+            ele.classList.add("green");             //used to add  class in classlist of element
+            console.log(ele.classList);
+            console.log(classList["value"]);
+        }
+        function funcTeal(){
+            ele.classList.remove("red" , "green")
+            ele.classList.add("teal");              //used to add  class in classlist of element
+            console.log(ele.classList);
+            console.log(classList["value"]);
+        }
+        var body = document.getElementById("body");
+        
+        function toggle(){                   
+            body.classList.toggle("dark");        //if class is present then remove it otherwise insert it (does not affect  DomTokenList returned by the classList attribute)
+        }
+
+        
+
+    </script>
+</body>
+</html>

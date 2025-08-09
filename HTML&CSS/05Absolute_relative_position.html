@@ -1,0 +1,57 @@
+<!-- by default position is static means it will follow the normal flow of html document.
+
+position : once position is applied to any element except static then we can use top left bottom right properties to determine the position of the element
+static 
+relative  - relative to its original position, if top applied then no use of bottom and same for left right.
+absolute  - firstly it will take out the element out of the normal flow and secondly the position is relative to its nearest parent which has position property applied, if not then relative to the html itself
+fixed
+sticky 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        *{
+            margin:0; /* universal selector selects all the tags, here making the margin as 0 because by defualt browser has some margin for each tag*/
+        }
+        .firstDiv{
+            width:400px;
+            height:400px;
+            background-color: aqua;
+            border:2px solid;
+            margin-bottom:20px;
+        }
+        .firstDiv>h1{
+            position:relative;
+            top:90px;
+            left:10px;
+            background-color: red;
+        }
+
+        .secondDiv{
+            width:400px;
+            height:400px;
+            background-color: aqua;
+            border:2px solid;
+            position: relative;
+        }
+        .secondDiv>h1{
+            position: absolute;
+            top:20px;
+            left:50px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="firstDiv">
+        <h1>Relative</h1>
+    </div>
+    <div class="secondDiv">
+        <h1>Absolute</h1>
+    </div>
+
+
+</body>
+</html>

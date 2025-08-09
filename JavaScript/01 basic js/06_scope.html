@@ -1,0 +1,43 @@
+<!-- var variables are having  global scope bcz they are part of window object -->
+ <!--
+ <script type = "module">  
+    if we declare variable(var,let,const) in this it will store in to the module scope not in window object or global object so it will not be accessible outside the script.
+    this is called module scope.
+
+     Module scope : whatever is in this script it will execute and die with in this script only so we cannt access variables of this script in another script
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>         
+        var a = 10;                   
+        console.log(window.a);
+        console.log(window);
+        {
+            var b = 20;                // b will find its nearest function but it does not have any function so it will be in gloabal window object
+        }
+        console.log(window.b);
+      
+        function add(){
+            var x = 20;                // x is local to this function add bcz it find its nearest function for scope so this will not be the part of global window object
+        }
+    </script>
+    <script>
+       //console.log(a);                //can access variable a from another script bcz doesnt matter how many scripts are there js engine will consider them as a one 
+    </script>
+
+    <script>
+        {
+            let y = 1;
+            console.log(y);
+        }
+    //    console.log(y);
+        // we can not access y outside the block bcz let has block scope
+    </script>
+</body>
+</html>

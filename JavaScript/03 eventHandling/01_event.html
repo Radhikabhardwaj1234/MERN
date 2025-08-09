@@ -1,0 +1,46 @@
+<!-- types of DOM events
+* mouse events
+* keyboard events 
+* form events
+* window events -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            height:50px;
+            /* display: block; */
+            margin :20px;
+        } 
+    </style>
+</head>
+<body>
+    <button id="btn" onclick="alert('hello')">On Click</button>
+    <button id="btn" ondblclick="alert('hello')">On Double click</button>
+    <button id="btn" onmousedown="alert('hello')">onmousedown</button>
+    <button id="btn" onmouseup="alert('hello')">onmouseup</button>
+    <button id="btn" onmouseenter="alert('hello')">onmouseenter</button>
+    <button id="btn" onmouseleave="alert('hello')">onmouseleave</button>
+    <button id="btn" onmousemove="alert('hello')">onmousemove</button>
+    <button id="btn" onmouseout="alert('hello')">onmouseout</button>
+    <button id="btn" onmouseover="alert('hello')">onmouseover</button>
+    <button id="btn" onmousewheel="alert('hello')">onmousewheel</button>
+
+
+
+
+    <!-- keyboard events -->
+
+    <div>
+      
+        <input type="text" id="input" placeholder="onkeydown" onkeydown="alert('ma ki akh')">  <!--works on all keys pressed-->
+        <input type="text" id="input" placeholder="onkeyup" onkeyup="alert('ma ki akh')">
+        <input type="text" id="input" placeholder="onkeypress" onkeypress="alert('ma ki akh')"> <!--doesn't work on special keys pressed-->
+        
+    </div>
+</body>
+</html>

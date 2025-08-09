@@ -1,0 +1,60 @@
+<!-- Absolute units - fixed (px - 1/96inch);
+
+*BY DEFAULT html tag font size is 16px.
+* h1 has 2em by default
+
+
+Relative units - units which depends on another things
+1.em
+2.rem (root em)
+3.vh
+4.vw
+5.%
+
+
+1.rem  - relative to the font size of root element(html tag)
+
+2.em  - relative to the font size of current element(html tag)
+
+1rem = 1em when none of the parents have the font size property. rem is special case of em 
+
+3. % - relative to the corresponding property of parent.
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+    html{
+        font-size: 20px;
+        width: 12px;
+    }
+    h1{
+        font-size: 2rem;   /* 2 *1rem = 2 * 20px (20px = font size of root element) */
+        width: 2rem;       /* 2 *1rem = 2 * 20px (20px = font size of root element)  not 24px bcz font size will be considered not corresponnding property*/
+    }
+    h2{
+        width:3em;         
+        /* width = 3*1em => 1em = font size of cur element whhich is 1.5em for h2 by default 1.5em means 1.5 * font size of curent element = 1.5 * 20px (from html tag) = 30px
+        width = 3*30px = 90px;   */ 
+    }
+    .div{
+        width:700px;
+        font-size: 200px;
+        background-color:aqua;
+    }
+    .h1{
+        width:50%;
+        background-color: brown;
+        font-size:21%;
+    }
+</style>
+</head>
+<body>
+    <h1>Hello</h1>
+    <h2>Heloo h2</h2>
+    <div class="div">
+        <h1 class="h1">hello div</h1>  
+    </div>
+</body>
+</html>

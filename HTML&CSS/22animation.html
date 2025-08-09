@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main{
+            width:200px;
+            height:200px;
+            background-color: black;
+            /*animation-name:animate;
+            animation-duration:8s;
+            animation-timing-function:ease-in; */
+            position:relative;
+            animation :animate 4s ease-in; 
+            animation-iteration-count: 1;
+            animation-delay:2s;
+            animation-direction:reverse;
+            /*animation-fill-mode:forwards; /*after finishing animation maintain the last frame of the animtion*/
+            /*animation-fill-mode:backwards; /*before starting the animation maintain the first frame during the delay (if delay is there) of the animation*/
+            animation-fill-mode:both; /*implemennt both forwards and backwards || all these properties are dependent on the animation direction */
+        }
+        /*at rule - the keywords which starts with @, this is a rule which have some work for ex - @keyframes have work to set the animation properties at a specific time , @import have work to import the files */
+        @keyframes animate{   
+            /* from {background-color:bisque;}
+            to {background-color: blueviolet;} */
+
+            /* 0% {background-color: aquamarine;}
+            50% {background-color: rgb(12, 72, 212);}
+            70% {background-color: rgb(22, 243, 30);}
+            100% {background-color: rgb(219, 137, 14);} */
+            
+            /*animation-timing-function will be apllied for each keyframe*/
+            0% {background-color: aquamarine;left:0px;top:0px;}
+            20% {background-color: rgb(12, 72, 212);left:500px;top:0px;transform:scale(0.5)}
+            50% {background-color: rgb(22, 243, 30); left:500px;top:300px;transform:scale(1)}
+            70% {background-color: rgb(242, 40, 154); left:0px;top:300px;transform:scale(0.5)}
+            100% {background-color: rgb(219, 137, 14); left:0px;top:0px;}
+
+
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+* static websites can be made with html + css
+* JavaScript is a programming language.  
+* Js add dynamicality in our website
+* Js execute with the help of js engine that is present in every browerser e.g chrome - v8 engine
+* in order to execute js in system we need a run time env called nodeJs which indirectly contains js engine.
+* Modern js uses JIT (just in  time) compilation after interprtation so that it increases the speed of execution
+
+
+
+
+
+* undefined - primtive value that automatically assigned that has been declare but not initialized and 
+        also abssence of a value when property does not exist.
+        all void function returns undefined e.g. console.log() returns undefined 
+
+* null - null is primitive value that is intentional absence of any object value and explicitly assigned to a variable as no value
+
+* js is a sychronus , single threaded , interpreted programming language.
+
+synchronus - do not execute next line until and unless current line is executing 
+            if there is error (not syntax error ) in next line it will come after execution of current line 
+
+* in any execution context only var variables are initialized with undefined
+
+* whenever we define a variable without using keyword var/let/const no matter where it is , it will be traeted as global variable.

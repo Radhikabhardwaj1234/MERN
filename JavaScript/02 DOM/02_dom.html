@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 id = "h1"> DOM</h1>
+    <div id = "divId">
+        Hello <b> World</b>
+        <p style = "display : none"> Hidden text </p>
+        <button onclick = "handleClick()" > click</button>
+    </div>
+    <script>
+        document.write("write function");        //writes on the document in the last available space 
+        let element = document.getElementById("h1");  // returns the first element of passed id , element will have all things of that h1 
+        console.log(element);
+        function handleClick(){ 
+            element.innerHTML = "innerHtml";        // represents the whole html in the container (so we can also write html tags in innerHTML)
+            element.innerHTML = "<mark>Hello</mark>"// will render this html tag also (in other two, it will be treated as plain text*)
+            // element.innerText = "innerText";        // represents the text inside the container(not hidden text)
+            // element.textContent = "textContent";    //represents the text inside the container even having display : none property
+        }
+        let divEle = document.getElementById("divId");
+        console.log(divId);
+        console.log(divId.innerText);
+        console.log(divId.innerHTML);
+        console.log(divId.textContent); 
+        console.dir(divEle);                     //all properties will be in console associated with this element 
+        divEle.title = "Heading Tag";
+        divEle.style.backgroundColor = "yellow";      //when we access css properties through elemennt and  use camelcase for two words properties like fontSize.
+        divEle.style["color"] = "red"; 
+    </script>
+</body>
+</html>

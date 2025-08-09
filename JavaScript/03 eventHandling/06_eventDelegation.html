@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="list" style = "background-color: aqua;">
+        <li style = "background-color: bisque;">item1</li>
+        <li>item2</li>
+        <li>item3</li>
+        <li>item4</li>
+    </ul>
+    <script>
+        var list = document.getElementById("list");
+        list.addEventListener("click",()=>{
+            if(event.target.textContent === "item1") alert("choosed item1")
+            if(event.target.tagName === 'LI') alert(`You have clicked ${event.target.textContent}`);
+            if(event.target.tagName === 'UL') alert(`You have clicked ${event.target.textContent}`);
+
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        p{
+            font-size:12px;
+            color:red;
+            font-weight:bold;
+            font-family:'Courier New', Courier, monospace;
+            letter-spacing:3px;
+            line-height:18px;
+            text-decoration:double 1px underline;
+        }
+        .div1{
+            height: 200px;
+            width: 200px;
+            padding:30px;
+            background-color:aqua;
+            margin-bottom:2px;
+        }
+        .div2{
+            height: 200px;
+            width: 200px;
+            padding:50px;
+            background-color:aqua;
+            margin-bottom:3px;
+            box-sizing:border-box;      /*it ensures that the box-size of the container remains the same as we set it and not affected by the padding,etc (box-modelproperties)*/
+        }
+        .div3{
+            height: 400px;
+            width: 400px;
+            padding:30px;
+            background-color:aqua;
+            
+            background-image: url(image.jpg); /*by default if the image dimension is lesss than the box then it will repeat the image in both the directions across x and y and we can remove the repeating by using background-repeatAND if the image dimension is more than the box then the image will be zoomed to fill the box*/
+            
+            background-repeat:no-repeat; /*doesnt repeat the background image*/
+            /* background-repeat: repeat-x; */
+            
+            background-position: top right;/*if the size is less than the box size then align the image*/
+            /*background-position: bottom;  /*by default second parameter is center*/
+            
+            /* background-size: cover;      /*zooms the image to fit the image in the box*/
+            background-size: contain;       /*contain the whole image*/
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">
+        Hello
+    </div>
+    <div class="div2">
+        Hello
+    </div>
+    <div class="div3">
+        Image
+    </div>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa, incidunt! Amet nihil, at repellat necessitatibus inventore quidem hic nesciunt illo itaque beatae doloribus deleniti temporibus odit dolore porro quis error vel sunt dolorem tempora minima numquam qui esse et. Veniam iste nostrum, fuga pariatur aperiam ullam laborum nobis magnam rem itaque tempore exercitationem maiores hic reiciendis voluptatem dicta tempora non numquam ex sed. Quasi, dolorem? Quos quod eos saepe! Omnis delectus quod, libero ullam illum tenetur, necessitatibus a architecto, repudiandae sed minus voluptates incidunt velit ducimus! Voluptatibus, tenetur beatae assumenda corporis aspernatur illo minima saepe incidunt fugit laborum quia a.</p>
+</body>
+</html>

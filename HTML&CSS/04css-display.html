@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        span{
+            border:3px solid red;
+            /* margin top and bottom will not work in inline element*/
+            /* margin:30px 40px; */
+            padding:20px 10px 20px 10px;
+            /*top and bottom padding will be applied but only visually , it will not push the bottom or upper elements.*/
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Inline element</h1>
+    <span>ASMIT</span>
+    <span>ASMIT</span>
+</body>
+</html>
+<!-- 
+display : inline        -> the element will occupy the width of content only and height, width, margin top,bottom are not supported
+display : block         -> the element will occupy the width of entire screen all properties supported.
+display : inline-block  -> the element will occupy the width of content only and height, width, margin top,bottom are now supported -> elemetn will be inline but support block properties. -->

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            /* background-color: aqua; */
+            height:100px;
+            display:flex;
+            justify-content: space-between;
+        }
+        .container > div{
+            /* background-color: antiquewhite; */
+              height:50px;
+              width:100px;
+              margin:10px;
+        }
+        .icon{
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .search{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width:250px !important;
+        }
+        .end{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width:180px !important;
+        }
+        .end > button{
+            border:none;
+        }
+        .search > div{
+            display: flex;
+            height:60%;
+        }
+        .search > div > input{
+            border-radius: 15px 0px 0px 15px;
+        }
+        .search > div > button{
+            border-radius: 0px 15px 15px 0px;
+        }
+        .search > button{
+            border-radius: 40%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="icon">
+            <button>=</button>
+            <div>YouTube</div>
+        </div>
+        <div class="search">
+            <div>
+                <input type="text" placeholder="Search">
+                <button>O</button> 
+            </div>
+            <button>O-</button> 
+        </div>
+        <div class="end">
+            <button>video</button>
+            <button>Noti</button>
+            <button>Account</button>
+        </div>
+    </div>
+</body>
+</html>

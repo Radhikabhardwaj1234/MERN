@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom manipulation</title>
+</head>
+<body>
+    
+    <div id="container">
+    </div>
+    <button onclick="func()"> Add Element </button>
+
+    <ul id="list">hiii<li id="item1">item1</li><li>item2</li><li id="item4">item4</li></ul>
+
+    <button onclick="handleRemoveFirst()"> Remove First Element </button>
+    <br>
+    <button onclick="handleRemoveLast()"> Remove Last Element </button>
+    <button onclick="append()"> Append Element </button>
+    <button onclick="replace()"> Replace Element </button>
+    <script>
+        let ele = document.getElementById("container");
+        let list = document.getElementById("list");
+        let li = document.createElement("li");
+        li.textContent = "item3";
+        let item4 = document.getElementById("item4");
+
+
+        function func(){
+            var para = document.createElement("p");    //creating element of p tag
+            para.textContent = "new para";
+            para.style.color = "red";
+            console.log(para);
+            ele.appendChild(para);                    //adding created para element in to the element of id container 
+        }
+
+        function replace(){
+            let ele = document.createElement("h1");
+            ele.textContent = "Replaced item";
+            let list = document.getElementById("list");
+            let item1 = document.getElementById("item1");
+            // list.replaceChild(ele , item1);
+
+            list.replaceChildren(ele , li);
+            list.replaceChildren(ele , document.createElement("h1").textContent="hello");
+        }
+
+        function handleRemoveFirst(){
+            if(list.hasChildNodes){
+                console.log(list.firstChild);                         //returns first child even if it is not an element
+                console.log(list.firstElementChild);                   //returns first child element only
+                list.removeChild(list.firstChild);
+            }
+        }
+
+        function handleRemoveLast(){
+            if(list.hasChildNodes){
+                console.log(list.firstChild)
+                list.removeChild(list.lastChild);
+            }
+        }
+
+        function append(){
+            let ll = document.createElement("li");
+            ll.textContent = "item";
+            list.appendChild(ll);
+        }
+
+        list.insertBefore(li , item4);              //insertBefore -  insert element before item4 in list element.
+        list.removeChild(item4);                    //removing child of list element which is item4 throws error if not found
+    </script>
+</body>
+</html>

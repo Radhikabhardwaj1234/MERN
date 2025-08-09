@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            background-color: black;
+            height:200px;
+            width:100%;
+            display: flex;
+            justify-content: space-around; /*align acc to main axis*/
+            align-items: center;            /*align acc to cross axis*/
+            flex-direction: row; /* main axis */
+            flex-wrap: wrap;    /*if contaoner overlows then it will shift the children to the next row */
+        }
+        .container > div{
+            background-color: blue;
+            height:60px;
+            width:100px;
+            text-align: center;
+        
+        }
+        .item2{
+            display:flex;
+            width:200px !important;
+            /* justify-content: space-around; */
+            gap:10px;
+            align-items: center;
+        }
+        .item2 > div{
+            background-color: red;
+            height:40px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>item1</div>
+        <div class="item2">
+            <div>services</div>
+            <div>services</div>
+            <div>services</div>
+        </div>
+        <div>item3</div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,38 @@
+s<!-- query selector :- -->
+<!-- class , id , name ,tag name , combinators e.g. child , descendent , general sibling , adjacent sibling , psuedo classes , psuedo elements-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <p class="para"></p>
+        <p class="para">
+            <p>Hello</p>
+        </p>
+        <p class="para"></p>
+    </div>
+
+    <div class="main1">
+        <p class="para">
+            <h1 id="h"></h1>
+            <h1 id="h"></h1>
+            <h1 id="h"></h1>
+        </p>
+    </div>
+
+    <script>
+        let ele = document.querySelector(".para");           //we  can write any selector query inside this and it will return only first matching element
+        let ele1 = document.querySelector(".main > .para");    //child selector - child para for combinator   although query selector will only select the first matching query irrespective of combinator
+        let ele2 = document.querySelector(".main .para");    //descendant selector - all desdendant para for combinator
+        let ele3 = document.querySelector(".main + .main1");    //adjacent sibling selector (first .main1 thar immediately follows .main and both of them have same parent)
+        let ele4 = document.querySelector(".main > .para : nth-child(3)")  // will select the 3rd para inside .main div
+
+        let ele5 = document.querySelectorAll(".main .para")  //returns all the elements in a NodeList
+    </script>
+</body>
+</html>

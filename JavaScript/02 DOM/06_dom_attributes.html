@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="img" src="./k.jpg" width="200px" height="200px">
+    <button onclick="func()">Remove image</button>
+    <script>
+        let ele = document.getElementById("img")
+        let srcAtt = ele.getAttribute("src")      // reading the attribute of a tag
+        console.log(srcAtt);
+
+        ele.setAttribute("alt","this is alt");    // sets the attribute doesnt matter if it is present or not
+
+        ele.setAttribute("class","main")
+        console.log(ele.getAttribute("class"))
+
+        console.log(ele.hasAttribute("src"));     // checks if the attribute is present in the tag or not (returns true or not)
+        console.log(ele.hasAttribute("t"));
+
+        ele.removeAttribute("alt")                // remove an attribute of the tag
+
+        function  func(){
+            ele.removeAttribute("height");
+        }
+
+    </script>
+</body>
+</html>

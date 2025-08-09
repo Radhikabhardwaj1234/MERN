@@ -1,0 +1,50 @@
+<!-- // dom traversal methods allow us to navigate through the dom tree and how elements are related with other elements -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <p id="child">This is first element</p>
+        <p id="second">This is second element</p>
+        <main>
+            <p>Hello</p>
+        </main>
+        <p id="third">This is third element</p>
+    </div>
+    <ul id="list">
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+    </ul>
+    <script>
+        let ele = document.getElementById("child");
+        var parentEle = ele.parentNode;                   // returns the parent element
+        console.log(parentEle);
+
+        let ele1 = document.getElementById("container");
+        var childrenEle = ele1.children;                  // returns the HTML collection of 1st level children
+        console.log(childrenEle)
+
+        let ele2 = document.getElementById("second");
+        let nextEleSibling = ele2.nextElementSibling;     // returns the next adjacent element of the selected element
+        console.log(nextEleSibling)
+
+        let ele3 = document.getElementById("second");
+        let prevEleSibling = ele2.previousElementSibling;     // returns the next adjacent element of the selected element
+        console.log(prevEleSibling)
+
+        let ele4 = document.getElementById("container");
+        var firstChild = ele1.firstElementChild;                  // returns the first child of selected element
+        console.log(firstChild)
+
+        let ele5 = document.getElementById("container");
+        var lastChild = ele1.lastElementChild;                  // returns the last child of selected element
+        console.log(lastChild)
+
+    </script>
+</body>
+</html>

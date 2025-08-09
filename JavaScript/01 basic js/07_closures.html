@@ -1,0 +1,60 @@
+<!-- closures are related to nested function
+lexical env or lexical scope is the scope of the  function's parent or grand parent 
+* when  inner function try to find a variable from its lexical scope and found there then it will form a closure to that parent function through the variable 
+* closure is an object which contains that variable for which it is searching 
+
+below example will make two closure one for outer one for inner bcz a and b are in diffrent parent function.
+Closure (inner)
+b
+: 
+1
+Closure (outer)
+a
+: 
+0 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script> 
+        function outer(){
+            var a = 0;
+            function inner(){
+                var b = 1;
+                function child(){
+                    console.log("hello");
+                    console.log("hello");
+                    console.log(a);
+                    console.log(b);
+                }
+                child();
+            }
+            inner();
+        }
+        outer();
+
+        
+        </script>
+
+    <script>
+        //*************** Interview  *************************
+        function outer(){
+            let count = 0;
+            return function(){
+                count++;
+                console.log(count);
+            }
+        }
+        let counter = outer();         //count variable is stored in closure of inner function so it will persist even after the eexecution outer (we can use count again and again ) 
+        console.log(counter);                           
+        counter();
+        counter();
+
+    </script>
+</body>
+</html>

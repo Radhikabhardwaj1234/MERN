@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main{
+            width:300px;
+            height:300px;
+            background-color: aqua;
+            transition: width 4s , background-color 3s;
+            transition-delay:1s;
+            /* transition-timing-function:linear;  controls the speed time curve of the transition
+            transition-timing-function:ease-in;
+            transition-timing-function:ease-out; */
+            transition-timing-function:ease-in-out; /*by default*/
+        }
+        #main:hover{
+            width:600px;
+            background-color: blanchedalmond;
+        }
+        .btn{
+            background-color: azure;
+            transition: background-color 2s ease-in , margin 2s ease-out;
+        }
+        .btn:focus{
+            background-color: brown;
+            margin: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+
+    </div>
+    <button class="btn">click</button>
+    
+</body>
+</html>

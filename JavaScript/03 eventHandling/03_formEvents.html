@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" id="form">
+        <input type="text" id="name" >
+        <br>
+        <input type="password" id="password">
+        <br>
+        <button id="btn">submit1</button>    <!--all button present in the form will act as submit button and refresh page by default-->
+        <button id="btn1">submit2</button>
+    </form>
+    <p></p>
+    <script>
+        var form = document.getElementById("form");
+        form.addEventListener("submit" , () => {
+            event.preventDefault();
+            var name = document.getElementById("name").value;
+            var pass = document.getElementById("password").value;
+            console.log(`${name} and ${pass}`);
+        })
+
+        // change event - triggers when any changes in the input field after coming out of field
+
+        let name = document.getElementById("name");
+        name.addEventListener("change" , ()=>{
+            console.log(event.target.value);
+            console.log("change occured");
+            
+        })
+
+        //focus event - triggers when u click on input field
+        
+        name.addEventListener("focus" , ()=>{
+            name.style.backgroundColor = "pink";
+            console.log("focused");
+            
+        })
+
+        //blur event - triggers when u come out of the input field
+
+         name.addEventListener("blur" , ()=>{
+            name.style.backgroundColor = "white";
+            console.log("blured");
+        })
+
+        form.addEventListener("click" , ()=>{
+            if(event.target.tagName ==='INPUT'){
+                if(event.target.style.backgroundColor === "aqua") event.target.style.backgroundColor = "white"
+                else event.target.style.backgroundColor="aqua";
+            }
+        })
+    </script>
+</body>
+</html>
+
+<!-- 
+when a form is submitted it will go to the action route by default but if there is no route in action then it will referesh.
+this default nature can be prevented by using event.preventDefault();
+-->

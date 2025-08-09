@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="func(event)">button</button>
+    <input type="text" id="input">
+    <p id="para"></p>
+<script>
+    var input = document.getElementById("input");
+    var para = document.getElementById("para");
+    input.addEventListener("keydown" , function(){        // not compulsory to pass event object in the function but if we dont pass then we have to use event.proerty
+        console.log(event.type)
+        console.log(event.target)
+        console.log(event.target.value)
+        console.log(event)
+        para.textContent += event.key;
+    });
+
+    function func(e){
+        console.log(e)
+        alert("hello");
+    }
+</script>
+</body>
+</html>

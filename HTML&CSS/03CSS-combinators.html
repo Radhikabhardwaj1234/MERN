@@ -1,0 +1,76 @@
+<!-- 
+0. Group Selector
+selector1, selector2, selector3 {
+    these properties will be appliead to all the selectors 1 2 3
+}
+
+1. Descendant selector
+selector1 selector2{
+    these properties will be applied on the all selector2  which are  descendants of the selector1. 
+}
+selector1 selector2 selector3{
+    these properties will be applied on the all selector3  which are  descendants of the selector2 and selector2 must be descendant of selector1.
+    if selector 2 is not present than properties will not be applied. 
+}
+
+2. Child selector
+selector1 > selector2{
+    these properties will be applied on the selector2 which are first level child  of the selector1. 
+} 
+selector1 > selector2 > selector3{
+    these properties will be applied on the selector3 which are first level child  of the selector2 and selector 2 must be first level child of selector1. 
+} 
+selector1 selector2 > selector3{
+    these properties will be applied on the selector3 which are first level child  of the selector2 and selector 2 must be descendant of selector1. 
+} 
+
+3. Adjacent sibling selector
+selector1 + selector2{
+    these properties will be applied on selector2 which is adjacent sibling of selector1 which comes after selector1.
+}
+
+4. General sibling selector
+selector1 ~ selector2{
+    these properties will be applied on selector2 which is sibling of selector1 which comes after selector1.
+}
+
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div main p{
+            background-color: aqua;
+        }
+        div > main > p{
+             background-color: red;
+        }
+        div + p{
+            background-color: bisque;
+        }
+        div ~ p{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <main>
+            <p>
+                hello
+            </p>
+            <h1>
+                <p>hello h1</p>
+            </h1>
+        </main>
+    </div>
+        <p>hello</p>
+        <p>hello</p>
+</body>
+</html>

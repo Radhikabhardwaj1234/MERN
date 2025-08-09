@@ -1,0 +1,49 @@
+align-self
+order     
+flex-grow
+flex-shrink 
+flex-basis 
+flex
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            background-color: aquamarine;
+            height:400px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            align-items: center;       /* it will align items w.r.t. thier own row*/
+            /* align-content: center;     it will align items w.r.t. container and it will make sense only whne flex wrap is applied and it also overrides the align-items property */
+        }
+        .container > div{
+            background-color: blue;
+            height:50px;
+            width:100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div style="align-self:flex-start">item</div>   <!--self-algin the item w.r.t cross axis and their own row-->
+        <div>item</div>
+        <div>item</div>
+        <div>item</div>
+        <div>item</div>
+        <div>item</div>
+        <div>item</div>
+        <div>item</div>
+        <div>item</div>
+        <div>item</div>
+        <div>item</div>
+        <div>item</div>
+        <div style="align-self:flex-start">item</div>
+        <div>item</div>
+    </div>
+</body>
+</html>

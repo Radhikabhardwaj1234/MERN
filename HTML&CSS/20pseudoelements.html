@@ -1,0 +1,53 @@
+<!-- pseudo elements are special selectors which edits the partial content of the tag also can add before or after the content -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p::first-letter{
+            font-size: 50px;
+            color:blue;
+        }
+        p::first-line{
+            color:blue;
+        }
+        span{
+            display: block;
+        }
+        span::first-letter{ /*first-letter pseudo element will not work for inline elements we need to make it block and then appply*/
+            font-size: 50px;
+            color:blue;
+
+        }
+        span::before,span::after{  /*"before" and "after" pseudo element works for inline elements also*/
+            content: "❤️💕";     /*emoji - window+dot*/
+        }
+        p:last-of-type > span::first-line{   /*if inline element is insdie a block level element then all pseudo elements work */
+            font-size: 50px;
+        }
+        p::selection{
+            background-color: aqua;
+            color: brown;
+        }
+        ::marker{               /*for all elements*/
+            color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+    </ul>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores alias illo iusto tempora explicabo molestiae id nesciunt dolorum ducimus rerum tenetur consectetur quia nobis ea, asperiores commodi nisi assumenda expedita.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores alias illo iusto tempora explicabo molestiae id nesciunt dolorum ducimus rerum tenetur consectetur quia nobis ea, asperiores commodi nisi assumenda expedita.</p>
+    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto porro aliquam quaerat deleniti excepturi dignissimos earum quo ex quam, nihil eum laborum voluptatem et repellat fugiat soluta neque in libero.</span>
+    <p>
+        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto porro aliquam quaerat deleniti excepturi dignissimos earum quo ex quam, nihil eum laborum voluptatem et repellat fugiat soluta neque in libero.</span>
+    </p>
+</body>
+</html>
